@@ -1,0 +1,279 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>微信小店双 11 玩法作战地图</title><style>
+*{box-sizing:border-box}html,body{margin:0;padding:0}
+body{background:#eef1f7;color:#17203a;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1440px;margin:0 auto;background:#fff;padding-bottom:8px}
+input.r{position:absolute;opacity:0;pointer-events:none}
+.hero{background:linear-gradient(128deg,#08166f 0%,#0A1A8C 45%,#1b46cf 100%);color:#fff;padding:22px 36px 20px;position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;right:-140px;top:-250px;width:520px;height:520px;border:1px solid rgba(108,227,223,.3);border-radius:50%}
+.eb{font-size:12px;letter-spacing:.22em;color:#8de6e1;font-weight:700}
+.hero h1{margin:6px 0 0;font-size:30px;font-weight:800}
+.hero h1 em{font-style:normal;color:#ffd977}
+.hero p{margin:6px 0 0;font-size:14px;color:#c9d6ff}
+.hk{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap;position:relative;z-index:1}
+.hk div{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:10px;padding:8px 14px}
+.hk b{display:block;font-size:22px;color:#ffd977;font-weight:800;line-height:1.15}
+.hk span{font-size:12px;color:#dfe6ff}
+.sec{padding:22px 36px 4px}
+.sh{display:flex;align-items:baseline;gap:12px;margin-bottom:12px;flex-wrap:wrap}
+.sh h2{margin:0;font-size:20px;font-weight:800;color:#0A1A8C;display:flex;align-items:center;gap:9px}
+.sh h2 i{font-style:normal;font-size:12px;color:#fff;background:#0A1A8C;border-radius:6px;padding:2px 8px}
+.sh span{font-size:13px;color:#7a849c}
+/* 类目 */
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+.tabs label{cursor:pointer;font-size:14px;font-weight:700;padding:7px 16px;border-radius:999px;background:#f1f4fa;border:1px solid #dfe5f1;color:#3c4869}
+.tabs label:hover{border-color:#1b46cf;color:#1b46cf}
+.cp{display:none;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.pk{border:1px solid #e3e8f3;border-radius:12px;overflow:hidden;display:flex;flex-direction:column;min-width:0}
+.pk .bg{background:#0A1A8C;color:#ffd977;font-size:24px;font-weight:800;padding:12px 14px 10px;line-height:1.1;white-space:nowrap}
+.pk .bg small{display:block;font-size:13.5px;color:#fff;margin-top:5px;font-weight:800;white-space:normal}
+.pk p{margin:0;padding:10px 14px 12px;font-size:13px;color:#3c4869;line-height:1.6}
+/* 出资条 */
+.fund{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:16px}
+.fl{border:1px solid #e3e8f3;border-radius:14px;padding:14px 16px;display:flex;flex-direction:column;gap:9px}
+.fr{display:grid;grid-template-columns:136px minmax(0,1fr) 180px;gap:12px;align-items:center}
+.fr .n{font-size:13.5px;font-weight:800}
+.fr .bar{height:26px;background:#eef1f7;border-radius:6px;overflow:hidden;display:flex}
+.fr .bar i{display:flex;align-items:center;padding-left:10px;font-style:normal;font-size:12px;font-weight:800;color:#fff;white-space:nowrap;background:#1b46cf}
+.fr .bar i.full{background:linear-gradient(90deg,#0A1A8C,#1b46cf)}
+.fr .bar em{display:flex;align-items:center;justify-content:flex-end;padding-right:10px;flex:1;font-style:normal;font-size:12px;font-weight:700;color:#8a93a8;background:#f6e9d9}
+.fr .nt{font-size:12px;color:#5c6783}
+.gc{border:1px solid #e3e8f3;border-radius:14px;padding:14px 16px;background:linear-gradient(135deg,#f6f9ff,#f3fbfa);display:flex;flex-direction:column;gap:10px}
+.gc b.t{font-size:15px}
+.gc .num{font-size:30px;font-weight:800;color:#0A1A8C;line-height:1.1}
+.gc .num small{font-size:14px;color:#5c6783;font-weight:700;margin-left:4px}
+.gc p{margin:0;font-size:12.6px;color:#3c4869;line-height:1.6}
+.gc .up{margin-top:auto;background:#0A1A8C;border-radius:10px;padding:10px 12px;color:#fff}
+.gc .up b{display:block;color:#ffd977;font-size:22px}
+.gc .up span{font-size:12px;color:#c9d6ff}
+/* 四种券 */
+.cps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.cpn{border:1px solid #e3e8f3;border-radius:12px;padding:12px 14px;display:flex;flex-direction:column;gap:7px;min-width:0}
+.cpn .h{font-size:15px;font-weight:800}
+.cpn .big{font-size:20px;font-weight:800;color:#1b46cf;line-height:1.25}
+.cpn .who{align-self:flex-start;font-size:11.5px;font-weight:800;color:#0b7d55;background:#e2f4ec;border-radius:5px;padding:2px 8px}
+.cpn p{margin:0;font-size:12.8px;color:#3c4869;line-height:1.6}
+.walk{margin-top:12px;border:1px solid #e3e8f3;border-radius:12px;padding:12px 16px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.walk .lab{font-size:13px;font-weight:800;color:#0A1A8C;margin-right:4px}
+.walk .st{display:flex;flex-direction:column;align-items:center;background:#f4f7fd;border-radius:9px;padding:6px 12px;min-width:92px}
+.walk .st b{font-size:18px;font-weight:800;color:#17203a}
+.walk .st span{font-size:11px;color:#5c6783}
+.walk .st.u{background:#0A1A8C}.walk .st.u b{color:#ffd977}.walk .st.u span{color:#c9d6ff}
+.walk .st.m{background:#e2f4ec}.walk .st.m b{color:#0b7d55}
+.walk em{font-style:normal;color:#a3abbd}
+.walk .nt{font-size:11.5px;color:#8a93a8;flex-basis:100%}
+/* 成长卡 */
+.live{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:16px}
+.tier{border:1px solid #e3e8f3;border-radius:14px;padding:14px 16px}
+.tier .cols{display:flex;align-items:flex-end;gap:10px;height:170px;padding-top:24px;border-bottom:1px solid #dfe5f1}
+.tier .col{flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;gap:4px;min-width:0;height:100%}
+.tier .col b{font-size:14px;font-weight:800;color:#0A1A8C}
+.tier .col i{width:100%;border-radius:6px 6px 0 0;background:linear-gradient(180deg,#1b46cf,#0A1A8C);display:block}
+.tier .col i.on{background:linear-gradient(180deg,#ffd977,#e0a92e)}
+.tier .xl{display:flex;gap:10px;margin-top:6px}
+.tier .xl span{flex:1;text-align:center;font-size:11.5px;color:#5c6783;white-space:nowrap}
+.tier .add{margin-top:10px;font-size:12.5px;color:#3c4869;display:flex;gap:8px;flex-wrap:wrap}
+.tier .add b{color:#fff;background:#0b7d84;border-radius:5px;padding:1px 7px;font-size:12px}
+.jump{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+.jump span{font-size:11.5px;background:#f4f7fd;border-radius:6px;padding:3px 8px;color:#3c4869}
+.jump span b{color:#0A1A8C}
+.ex{border:1px solid #e3e8f3;border-radius:14px;padding:14px 16px;display:flex;flex-direction:column;gap:7px}
+.ex .r{display:flex;justify-content:space-between;gap:10px;font-size:13px;padding:6px 0;border-bottom:1px dashed #e6ebf5}
+.ex .r b{color:#0A1A8C;white-space:nowrap}
+.ex .tot{display:flex;justify-content:space-between;align-items:baseline;background:#0A1A8C;color:#fff;border-radius:10px;padding:10px 12px;margin-top:2px}
+.ex .tot b{font-size:24px;color:#ffd977}
+.tips{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:12px}
+.tips div{border-left:4px solid #1b46cf;background:#f6f9ff;border-radius:8px;padding:9px 12px}
+.tips b{display:block;font-size:13.5px}
+.tips span{font-size:12.3px;color:#4b5675}
+/* 公私域 */
+.lk{border:1px solid #e3e8f3;border-radius:14px;padding:12px 16px;margin-bottom:10px;display:grid;grid-template-columns:150px minmax(0,1fr);gap:16px;align-items:center}
+.lk .hd b{display:block;font-size:16px;font-weight:800}
+.lk .hd .tg{display:inline-block;margin-top:4px;font-size:11.5px;font-weight:800;color:#1b46cf;background:#e9efff;border-radius:5px;padding:1px 8px}
+.lk .dt{margin-top:8px;display:flex;flex-direction:column;gap:4px}
+.lk .dt div b{font-size:20px;color:#c2410c;display:inline;font-weight:800}
+.lk .dt div span{font-size:11.5px;color:#5c6783;margin-left:4px}
+.flow{display:flex;align-items:stretch;gap:0;min-width:0}
+.fs{flex:1;min-width:0;background:#f6f9ff;border:1px solid #dbe4f7;border-radius:10px;padding:8px 11px;position:relative}
+.fs+.fs{margin-left:22px}
+.fs+.fs:before{content:"";position:absolute;left:-17px;top:50%;width:12px;height:12px;border-top:2.5px solid #1b46cf;border-right:2.5px solid #1b46cf;transform:translateY(-50%) rotate(45deg)}
+.fs .w{font-size:11px;font-weight:800;color:#0b7d84}
+.fs b{display:block;font-size:13.5px;margin-top:2px;line-height:1.35}
+.fs span{display:block;font-size:11.8px;color:#5c6783;margin-top:3px;line-height:1.45}
+/* 甘特 */
+.gt{border:1px solid #e3e8f3;border-radius:14px;padding:14px 16px 10px}
+.gr{display:grid;grid-template-columns:150px minmax(0,1fr);gap:12px;align-items:center;margin-bottom:8px}
+.gr .n{font-size:13px;font-weight:800}
+.gr .tr{position:relative;height:26px;background:#f4f6fa;border-radius:6px}
+.gr .tr i{position:absolute;top:0;bottom:0;border-radius:6px;display:flex;align-items:center;padding-left:8px;font-style:normal;font-size:11.5px;font-weight:700;color:#fff;white-space:nowrap;overflow:hidden}
+.gr .tr u{position:absolute;top:-3px;bottom:-3px;border:2px solid #e0a92e;background:rgba(255,217,119,.35);border-radius:5px;text-decoration:none}
+.gr .tr u span{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:11px;font-weight:800;color:#7a5410;white-space:nowrap}
+.gx{position:relative;height:18px;margin-left:162px}
+.gx span{position:absolute;transform:translateX(-50%);font-size:11px;color:#8a93a8;white-space:nowrap}
+.foot{margin:16px 36px 0;padding:12px 0 22px;font-size:11.5px;color:#8a93a8;line-height:1.7;border-top:1px solid #eef1f7}
+@media(max-width:1200px){.cp,.cps{grid-template-columns:repeat(2,minmax(0,1fr))}.fund,.live{grid-template-columns:minmax(0,1fr)}
+ .lk{grid-template-columns:minmax(0,1fr)}.flow{flex-wrap:wrap;gap:8px}.fs+.fs{margin-left:0}.fs+.fs:before{display:none}.fs{flex:1 1 180px}}
+@media(max-width:760px){.hero,.sec{padding-left:16px;padding-right:16px}.foot{margin:12px 16px 0}.cp,.cps,.tips{grid-template-columns:minmax(0,1fr)}
+ .fr{grid-template-columns:minmax(0,1fr)}.fr .nt{margin-top:-4px}.gr{grid-template-columns:minmax(0,1fr);gap:4px}.gx{margin-left:0}.gr .tr u span{display:none}
+ .tier .xl span{font-size:10px;white-space:normal}.hero h1{font-size:24px}}
+
+#r-gh:checked~.wrap .cp.c-gh{display:grid}#r-gh:checked~.wrap label[for=r-gh]{background:#0A1A8C;color:#fff;border-color:#0A1A8C}
+#r-mz:checked~.wrap .cp.c-mz{display:grid}#r-mz:checked~.wrap label[for=r-mz]{background:#0A1A8C;color:#fff;border-color:#0A1A8C}
+#r-sp:checked~.wrap .cp.c-sp{display:grid}#r-sp:checked~.wrap label[for=r-sp]{background:#0A1A8C;color:#fff;border-color:#0A1A8C}
+#r-jf:checked~.wrap .cp.c-jf{display:grid}#r-jf:checked~.wrap label[for=r-jf]{background:#0A1A8C;color:#fff;border-color:#0A1A8C}
+#r-sm:checked~.wrap .cp.c-sm{display:grid}#r-sm:checked~.wrap label[for=r-sm]{background:#0A1A8C;color:#fff;border-color:#0A1A8C}
+#r-jd:checked~.wrap .cp.c-jd{display:grid}#r-jd:checked~.wrap label[for=r-jd]{background:#0A1A8C;color:#fff;border-color:#0A1A8C}
+</style></head><body>
+<input class="r" type="radio" name="cat" id="r-gh" checked>
+<input class="r" type="radio" name="cat" id="r-mz">
+<input class="r" type="radio" name="cat" id="r-sp">
+<input class="r" type="radio" name="cat" id="r-jf">
+<input class="r" type="radio" name="cat" id="r-sm">
+<input class="r" type="radio" name="cat" id="r-jd">
+<div class="wrap"><header class="hero"><div class="eb">WECHAT STORE · DOUBLE 11 PLAYBOOK</div><h1>微信小店双 11 <em>玩法作战地图</em></h1><p>平台出多少钱、满减怎么组合、公私域怎么串，一张图看清</p><div class="hk"><div><b>100%</b><span>好店全资券 · 商家 0 出资</span></div><div><b>16.7%</b><span>品类加补最高力度</span></div><div><b>满 1000 减 1000</b><span>分享膨胀券最高</span></div><div><b>200 万点</b><span>大场成长卡活动期上限</span></div><div><b>30%–100%</b><span>满减带动 GMV 提升</span></div></div></header>
+<section class="sec"><div class="sh"><h2><i>00</i>你的类目主推组合</h2><span>选类目，看这一品类最该打的 4 个玩法</span></div><div class="tabs">
+<label for="r-gh">个护家清纸品</label>
+<label for="r-mz">美妆</label>
+<label for="r-sp">食品饮料</label>
+<label for="r-jf">家纺日百厨具</label>
+<label for="r-sm">数码家电</label>
+<label for="r-jd">家用电器</label>
+</div>
+<div class="cp c-gh">
+<div class="pk"><div class="bg">200-25<small>多件装卡基础满减</small></div><p>囤货型商品做多件装，一单凑满 200 / 400 档</p></div>
+<div class="pk"><div class="bg">16.7%<small>品类加补</small></div><p>个人护理、家庭清洁/纸品都在加补名单，平台全资加码</p></div>
+<div class="pk"><div class="bg">&lt; 20 元<small>低价单品报限时秒杀</small></div><p>家庭环境清洁、清洁纸品、衣物清洁在 11 月秒杀名单</p></div>
+<div class="pk"><div class="bg">回购券<small>大促后锁复购</small></div><p>有效期设成回购周期；硬通货商品吃朋友补贴</p></div>
+</div>
+<div class="cp c-mz">
+<div class="pk"><div class="bg">小样<small>赠品送朋友</small></div><p>下单附赠小样送朋友，后台看收礼人 30 天下单</p></div>
+<div class="pk"><div class="bg">礼物抽奖<small>群聊送礼物</small></div><p>商品合集多低价配少量高价，群友随机抽</p></div>
+<div class="pk"><div class="bg">大额档<small>人群满减券拉新</small></div><p>主推高客单正装，人群券转化效果最显著</p></div>
+<div class="pk"><div class="bg">16.7%<small>品类加补</small></div><p>美妆护肤在加补名单，平台全资加码</p></div>
+</div>
+<div class="cp c-sp">
+<div class="pk"><div class="bg">多件装<small>小规格多件装</small></div><p>给用户囤货理由，一单凑满 200 档</p></div>
+<div class="pk"><div class="bg">错峰<small>大场排第二周与大促前一周</small></div><p>正日头部资源被抢，食品低客单错峰冲高</p></div>
+<div class="pk"><div class="bg">&lt; 20 元<small>低价单品报限时秒杀</small></div><p>休闲食品、饮料冲调、粮油调味等在 11 月秒杀名单</p></div>
+<div class="pk"><div class="bg">16.7%<small>品类加补</small></div><p>食品饮料、生鲜、酒类在加补名单</p></div>
+</div>
+<div class="cp c-jf">
+<div class="pk"><div class="bg">16.7%<small>品类加补</small></div><p>家纺、厨具、家具在加补名单（日用百货不在）</p></div>
+<div class="pk"><div class="bg">&lt; 20 元<small>日百低价单品报限时秒杀</small></div><p>生活日用、收纳用品、餐具、烹饪锅具等在 11 月秒杀名单</p></div>
+<div class="pk"><div class="bg">400-50<small>组套卡中档满减</small></div><p>四件套、锅具套装直接卡 400 档</p></div>
+<div class="pk"><div class="bg">礼物合集<small>送礼物</small></div><p>乔迁、节日礼盒做商品合集，群聊礼物抽奖</p></div>
+</div>
+<div class="cp c-sm">
+<div class="pk"><div class="bg">15%<small>国补</small></div><p>手机 / 平板 / 手表 / 眼镜（≤6000 元）补 15%，每件最高 500 元</p></div>
+<div class="pk"><div class="bg">1000-120<small>高客单单件过最高档</small></div><p>单件直接用 1000-120，叠人群满减券拉新</p></div>
+<div class="pk"><div class="bg">16.7%<small>品类加补</small></div><p>手机通讯、数码、电脑在加补名单</p></div>
+<div class="pk"><div class="bg">&lt; 20 元<small>配件报限时秒杀</small></div><p>手机配件在 11 月秒杀名单，带动引流</p></div>
+</div>
+<div class="cp c-jd">
+<div class="pk"><div class="bg">15%<small>国补</small></div><p>1 级能效冰箱 / 洗衣机 / 电视 / 空调 / 热水器补 15%，每件最高 1500 元</p></div>
+<div class="pk"><div class="bg">1000-120<small>高客单单件过最高档</small></div><p>单件直接用 1000-120，叠人群满减券拉新</p></div>
+<div class="pk"><div class="bg">16.7%<small>品类加补</small></div><p>家用电器在加补名单</p></div>
+<div class="pk"><div class="bg">大额券<small>冲刺期主推高客单</small></div><p>11.9–11.11 大额券和免单最多，主推高客单</p></div>
+</div>
+</section>
+<section class="sec"><div class="sh"><h2><i>01</i>平台出多少钱</h2><span>蓝色 = 平台出资，米色 = 商家出资</span></div><div class="fund"><div class="fl">
+<div class="fr"><span class="n">基础满减 · 混资券</span><div class="bar"><i class="" style="width:50%">平台 50% ｜ 商家 50%</i><em>商家 50%</em></div><span class="nt">商家最多让利活动价的 6.25%</span></div>
+<div class="fr"><span class="n">基础满减 · 全资券</span><div class="bar"><i class="full" style="width:100%">平台 100%</i></div><span class="nt">「好店」商品，商家 0 出资</span></div>
+<div class="fr"><span class="n">分享膨胀券</span><div class="bar"><i class="full" style="width:100%">膨胀部分 平台 100%</i></div><span class="nt">最高满 1000 减 1000</span></div>
+<div class="fr"><span class="n">品类加补券</span><div class="bar"><i class="full" style="width:100%">平台 100%</i></div><span class="nt">力度最高 16.7%</span></div>
+<div class="fr"><span class="n">主播专属券</span><div class="bar"><i class="full" style="width:100%">平台 100%</i></div><span class="nt">可叠加跨店满减</span></div>
+<div class="fr"><span class="n">直播间三单挑战</span><div class="bar"><i class="full" style="width:100%">平台承担</i></div><span class="nt">最高返 66.66 元无门槛券</span></div>
+<div class="fr"><span class="n">天降红包</span><div class="bar"><i class="full" style="width:100%">平台全资</i></div><span class="nt">限时 1 小时定向商品</span></div>
+</div><div class="gc"><b class="t">直播大场成长卡</b><div class="num">1.2%–3%<small>× 有效 GMV</small></div><p>有效 GMV × 1.2%–3%，满减商品占比 ≥50% 再 +1%；单场最高 90 万 + 30 万点 · 活动期上限 200 万点。成长卡用于直播、短视频投流。</p><div class="up"><b>30%–100%</b><span>满减带动 GMV 提升（团队调研）</span></div></div></div></section>
+<section class="sec"><div class="sh"><h2><i>02</i>跨店满减：4 种券怎么组合</h2><span>同一订单只生效一档满减；主播专属券、朋友补贴可再叠加</span></div><div class="cps">
+<div class="cpn"><span class="h">基础满减券</span><span class="big">200-25 / 400-50 / 1000-120</span><span class="who">平台 : 商家 = 1 : 1，好店全资</span><p>按三档门槛组货：低客单做多件装凑 200，中客单做套装凑 400，高客单单件直接过 1000，让用户一单就能用券</p></div>
+<div class="cpn"><span class="h">人群满减券</span><span class="big">大额档位</span><span class="who">平台发放给定向人群</span><p>高客单商品的拉新武器：人群券对高客单转化效果显著，主推高客单款时重点承接</p></div>
+<div class="cpn"><span class="h">分享膨胀券</span><span class="big">最高免单</span><span class="who">膨胀部分平台全额承担</span><p>下单后解锁分享，分享者和被分享者都可能抽到免单券；新客有加码。配合私域群转发，超 50% 商家靠它带来额外成交</p></div>
+<div class="cpn"><span class="h">品类加补券</span><span class="big">599-100</span><span class="who">平台全资，最高 16.7%</span><p>趋势品类加码：与基础券同单取优、不叠加，用户自动拿到更低价；额度用完回落基础券，加补期要备足库存</p></div>
+</div><div class="walk"><span class="lab">一单怎么算</span>
+<div class="st"><b>200</b><span>标价</span></div>
+<em>→</em>
+<div class="st"><b>−20</b><span>店铺券 200-20</span></div>
+<em>→</em>
+<div class="st"><b>−15</b><span>跨店满减分摊</span></div>
+<em>→</em>
+<div class="st u"><b>165</b><span>用户实付</span></div>
+<em>→</em>
+<div class="st"><b>7.5</b><span>商家出资 50%</span></div>
+<em>→</em>
+<div class="st m"><b>172.5</b><span>商家结算</span></div>
+<span class="nt">官方算例：A 商品 200 元先用店铺券 200-20，再与另一店商品合单用 200-25 跨店满减，按金额比例分摊 15 元，平台和商家各出 7.5 元。</span></div></section>
+<section class="sec"><div class="sh"><h2><i>03</i>直播大场：成长卡怎么拿</h2><span>基础 + 叠加 + 首次跃迁，三层可同时拿</span></div><div class="live"><div class="tier"><b style="font-size:14px">基础激励比例（按单场有效 GMV 档位）</b><div class="cols">
+<div class="col"><b>1.2%</b><i class="" style="height:44px"></i></div>
+<div class="col"><b>1.4%</b><i class="on" style="height:51px"></i></div>
+<div class="col"><b>1.6%</b><i class="" style="height:59px"></i></div>
+<div class="col"><b>2%</b><i class="" style="height:73px"></i></div>
+<div class="col"><b>2.5%</b><i class="" style="height:92px"></i></div>
+<div class="col"><b>3%</b><i class="" style="height:110px"></i></div>
+</div><div class="xl"><span>10–50 万</span><span>50–100 万</span><span>100–300 万</span><span>300–1000 万</span><span>1000–3000 万</span><span>3000 万+</span></div>
+<div class="add"><b>+1%</b>满减商品成交占比 ≥50% 再拿叠加激励（单场最高 30 万点）</div>
+<div class="jump"><span style="background:none;padding-left:0;font-weight:800;color:#3c4869">首次跃迁（7 月以来首破）</span><span>50 万 → <b>3 千 点</b></span><span>100 万 → <b>1 万 点</b></span><span>300 万 → <b>2 万 点</b></span><span>1000 万 → <b>3 万 点</b></span><span>3000 万 → <b>5 万 点</b></span><span>1 亿 → <b>8 万 点</b></span></div></div>
+<div class="ex"><b style="font-size:14px">官方算例：一场有效 GMV 60 万</b>
+<div class="r"><span>有效 GMV 60 万</span><b>落在 50–100 万档</b></div>
+<div class="r"><span>基础 60 万 × 1.4%</span><b>8,400 点</b></div>
+<div class="r"><span>满减商品占 67% ≥ 50%</span><b>+ 6,000 点</b></div>
+<div class="r"><span>首破 50 万</span><b>+ 3,000 点</b></div>
+<div class="tot"><span>合计成长卡</span><b>17,400 点</b></div></div></div><div class="tips">
+<div><b>大场排周末</b><span>首周末测试，第二周、第四周（立冬）周末打正式大场</span></div>
+<div><b>货盘一半以上是满减商品</b><span>才能吃到额外 1% 叠加激励</span></div>
+<div><b>成长卡 15 天内投完</b><span>大场后约第 8 天到账，投给下一个大场</span></div>
+</div></section>
+<section class="sec"><div class="sh"><h2><i>04</i>公私域联动：4 条打法</h2><span>每一步写的是在哪做、做什么</span></div>
+<div class="lk"><div class="hd"><b>大场蓄水闭环</b><span class="tg">公域 ⇄ 私域</span><div class="dt">
+<div><b>5000+</b><span>单场私域预约</span></div>
+<div><b>500 万+</b><span>单场 GMV</span></div>
+</div></div><div class="flow">
+<div class="fs"><span class="w">视频号</span><b>发直播预告</b><span>开「预约可领券」，可挂预告抽奖</span></div>
+<div class="fs"><span class="w">社群 / 朋友圈</span><b>发主播专属券</b><span>平台全资，叠加满减；链接 / 二维码转发</span></div>
+<div class="fs"><span class="w">搜一搜</span><b>搜「店铺名 + 专属券」</b><span>短口令直达领券</span></div>
+<div class="fs"><span class="w">直播间</span><b>开播自动提醒</b><span>开播 10 分钟内推送已预约用户</span></div>
+<div class="fs"><span class="w">直播间</span><b>老客专享抽礼物</b><span>限历史购买 / 会员 / 收藏用户参与</span></div>
+</div></div>
+<div class="lk"><div class="hd"><b>社交裂变</b><span class="tg">私域 → 新客</span><div class="dt">
+<div><b>50%+</b><span>商家靠膨胀券额外成交</span></div>
+</div></div><div class="flow">
+<div class="fs"><span class="w">订单页</span><b>下单解锁分享膨胀券</b><span>分享者、被分享者都可能抽到免单</span></div>
+<div class="fs"><span class="w">群聊</span><b>礼物抽奖</b><span>商品合集送礼，群友随机抽中一件</span></div>
+<div class="fs"><span class="w">朋友关系</span><b>朋友补贴</b><span>朋友买过的商品享平台补贴价</span></div>
+<div class="fs"><span class="w">收礼人</span><b>赠品送朋友</b><span>下单附赠小样给朋友，种草新客</span></div>
+</div></div>
+<div class="lk"><div class="hd"><b>私域专场</b><span class="tg">私域成交</span><div class="dt">
+<div><b>24 小时</b><span>服务号限时活动</span></div>
+<div><b>20 款</b><span>单场最多商品</span></div>
+</div></div><div class="flow">
+<div class="fs"><span class="w">服务号</span><b>限时活动 + 专属券</b><span>每月 1 次专用群发，不占 4 次普通群发</span></div>
+<div class="fs"><span class="w">企业微信</span><b>员工转发商品卡 / 带参海报</b><span>成交来源可查到员工，便于激励</span></div>
+<div class="fs"><span class="w">小程序</span><b>内嵌商品卡与优惠券</b><span>半屏拉起下单，不跳出小程序</span></div>
+</div></div>
+<div class="lk"><div class="hd"><b>会员与回购</b><span class="tg">大促新客 → 老客</span><div class="dt">
+<div><b>≥ 5 元</b><span>收藏券</span></div>
+<div><b>72 小时</b><span>回购券到期提醒</span></div>
+</div></div><div class="flow">
+<div class="fs"><span class="w">下单页</span><b>收藏领券即抵扣</b><span>把大促新客变成店铺粉丝</span></div>
+<div class="fs"><span class="w">会员通</span><b>小店下单、送礼都享会员价</b><span>同主体多店共用一套会员</span></div>
+<div class="fs"><span class="w">卡包</span><b>回购券召回</b><span>有效期设成回购周期，到期前 72 小时红点提醒</span></div>
+</div></div>
+</section>
+<section class="sec"><div class="sh"><h2><i>05</i>什么时候打哪张牌</h2><span>2026 双 11 · 金框 = 建议大场周末</span></div><div class="gt">
+<div class="gr"><span class="n">报名</span><div class="tr"><i style="left:0.00%;width:28.57%;background:#5b6784">9.28 起报</i></div></div>
+<div class="gr"><span class="n">跨店满减 + 膨胀券</span><div class="tr"><i style="left:28.57%;width:71.43%;background:#1b46cf">10.12–11.15</i></div></div>
+<div class="gr"><span class="n">品类加补券</span><div class="tr"><i style="left:61.22%;width:38.78%;background:#0b7d84">10.28 起</i></div></div>
+<div class="gr"><span class="n">主播专属券</span><div class="tr"><i style="left:28.57%;width:71.43%;background:#7b4fc9">跟大场走</i></div></div>
+<div class="gr"><span class="n">限时秒杀（11 月）</span><div class="tr"><i style="left:69.39%;width:30.61%;background:#c2410c">11.1 起，到 11.30</i></div></div>
+<div class="gr"><span class="n">直播大场</span><div class="tr">
+<u style="left:38.78%;width:4.08%"><span>测试场</span></u>
+<u style="left:53.06%;width:4.08%"><span>大场①</span></u>
+<u style="left:81.63%;width:4.08%"><span>大场②</span></u>
+</div></div><div class="gx">
+<span style="left:1.02%">9.28</span>
+<span style="left:29.59%">10.12</span>
+<span style="left:62.24%">10.28</span>
+<span style="left:90.82%">11.11</span>
+<span style="left:98.98%">11.15</span>
+</div></div></section>
+<div class="foot">依据：微信小店《2026年11.11平台大促-平台活动激励计划》《限时秒杀活动政策（26年11月）》《国补活动规则》及送礼物、一起买、主播送礼物、直播预约可领券、服务号限时活动、企业微信关联、小程序连接小店、会员服务、收藏券、回购券等官方指南；团队《双 11 政策 + 解读》。券面、成长卡阶梯与「5000+ / 500 万+ / 30%–100% / 超 50%」等效果数据来自团队解读，以报名页与实际为准。</div></div></body></html>
