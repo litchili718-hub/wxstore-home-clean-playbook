@@ -1,0 +1,247 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>家清 · 货架经营 Playbook</title><style>
+*{box-sizing:border-box}html,body{margin:0;padding:0}
+body{background:#EEF2F7;color:#25364D;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;-webkit-font-smoothing:antialiased}
+.wrap{width:1400px;max-width:100%;margin:0 auto;background:#fff;overflow:hidden}
+.ic{flex:none;vertical-align:middle}
+/* header */
+.hd{background:linear-gradient(105deg,#0f1d33,#14243F 55%,#1B5A96);color:#fff;padding:22px 28px 20px;display:flex;gap:26px;align-items:flex-start;flex-wrap:wrap}
+.hdl{flex:1;min-width:330px}
+.eyebrow{font-size:11px;letter-spacing:2px;color:#7FD4E8;font-weight:800}
+.hdl h1{font-size:30px;margin:7px 0 5px;font-weight:800;letter-spacing:.5px}
+.hdl p{margin:0;font-size:12.5px;color:#B9CBE4;line-height:1.6}
+.hdr{width:560px;min-width:0}
+.fields{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px}
+.fields label{font-size:10.5px;color:#8FB3D9;display:block;margin-bottom:3px;font-weight:700}
+.fields input{width:100%;min-width:0;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.2);border-radius:6px;color:#fff;padding:6px 8px;font-size:12px;outline:none}
+.fields input::placeholder{color:#8FB3D9}
+.tools{display:flex;align-items:center;gap:8px;margin-top:11px;flex-wrap:wrap}
+.prog{background:rgba(255,255,255,.1);border-radius:8px;padding:6px 11px;font-size:12px;white-space:nowrap}
+.prog b{font-size:19px;color:#ffd977;font-weight:800}
+.bar{height:5px;background:rgba(255,255,255,.15);border-radius:5px;overflow:hidden;flex:1;min-width:60px}
+.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,#6ce3df,#ffd977);border-radius:5px}
+button,.btn{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.28);color:#fff;border-radius:7px;padding:7px 11px;font-size:11.5px;font-weight:700;cursor:pointer;white-space:nowrap}
+button:hover,.btn:hover{background:rgba(255,255,255,.22)}
+.howto{margin-top:9px;font-size:10.5px;color:#8FB3D9;line-height:1.6}
+.howto b{color:#B9CBE4}
+/* map */
+.map{display:block;width:100%;height:auto;border-bottom:1px solid #D8E4F0}
+/* sections */
+.sec{padding:20px 28px 22px;border-bottom:1px solid #E9EFF6}
+.sec.la{background:#FCFDFE}.sec.lb{background:#FFFDF9}.sec.lc{background:#FBFEFC}
+.sec.red{background:#FFF9F7;border-bottom:0}
+.sh{display:flex;gap:12px;align-items:center;margin-bottom:14px}
+.sh .no{width:32px;height:32px;flex:none;border-radius:9px;background:#14243F;color:#fff;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center}
+.sec.la .sh .no{background:#1B5A96}.sec.lb .sh .no{background:#C4871E}.sec.lc .sh .no{background:#1E8A5F}.sec.red .sh .no{background:#8A3B33}
+.sh h2{font-size:17px;margin:0;font-weight:800;color:#14243F}
+.sh p{font-size:11.5px;margin:2px 0 0;color:#8A9AAC}
+.sb{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px 20px;align-items:start}
+.sb>.sub,.sb>.tw,.sb>.flow,.sb>.law,.sb>.t3,.sb>.t4,.sb>.acts,.sb>.rules,.sb>.sub2,.sb>.chips,.sb>.warn,.sb>.rh3,.sb>.rl3,.sb>.note,.sb>.gate{grid-column:1/-1}
+.sub{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.sub h3{font-size:14px;margin:0;font-weight:800;color:#14243F}
+.sub p{font-size:11.5px;margin:0;color:#8A9AAC}
+.sub2{font-size:12px;font-weight:800;color:#5C6B80}
+/* flow */
+.flow{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.pc{position:relative;background:#F4F8FC;border:1px solid #D8E4F0;border-radius:10px;padding:12px 14px;min-width:0}
+.pc:not(:last-child):after{content:"→";position:absolute;right:-14px;top:50%;transform:translateY(-50%);color:#1B5A96;font-size:18px;font-weight:800;z-index:2}
+.pci{margin-bottom:6px}
+.pc b{display:block;font-size:14px;color:#14243F}
+.pc span{display:block;font-size:11.5px;color:#5C6B80;margin-top:3px;line-height:1.5}
+.law{display:flex;gap:9px;align-items:center;background:#F2FAF6;border-left:3px solid #1E8A5F;border-radius:8px;padding:9px 13px;font-size:12px}
+.law b{color:#1E8A5F;white-space:nowrap}.law span{color:#25364D}
+/* table */
+.tw{overflow-x:auto}table.tb{width:100%;border-collapse:collapse;font-size:12px;table-layout:fixed}
+.tb th{background:#EAF3FC;color:#14243F;text-align:left;padding:8px 10px;font-weight:800;font-size:11.5px;border:1px solid #D8E4F0}
+.tb td{padding:8px 10px;border:1px solid #E6EDF5;color:#25364D;vertical-align:top;line-height:1.55;word-break:break-word}
+.tb td:first-child{font-weight:800;color:#1B5A96;white-space:nowrap}
+.tb tbody tr:nth-child(even){background:#FAFCFE}
+/* gates / checks */
+.gate{background:#fff;border:1px solid #D8E4F0;border-radius:10px;padding:12px 14px;min-width:0}
+.gt{display:flex;align-items:center;gap:7px;padding-bottom:8px;margin-bottom:6px;border-bottom:1px solid #E9EFF6}
+.gt b{font-size:12.5px;color:#14243F}.gt span{margin-left:auto;font-size:10.5px;color:#8A9AAC}
+.gl{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2px 16px}
+.chk{display:flex;gap:8px;align-items:flex-start;padding:5px 0;font-size:12px;color:#25364D;cursor:pointer;line-height:1.5;min-width:0}
+.chk input{position:absolute;opacity:0;width:0;height:0}
+.cb{flex:none;width:15px;height:15px;margin-top:1px;border:1.6px solid #A8BCD2;border-radius:3px;background:#fff;position:relative}
+.chk input:checked+.cb{background:#1B5A96;border-color:#1B5A96}
+.chk input:checked+.cb:after{content:"";position:absolute;left:4px;top:1px;width:4px;height:8px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(42deg)}
+.chk input:checked~.ct{color:#8A9AAC;text-decoration:line-through}
+.ct{min-width:0;word-break:break-word}
+/* notes / acts / cards */
+.note{border:1px dashed #B9CDE0;border-radius:9px;padding:10px 12px;background:#FBFDFF}
+.nt{display:flex;gap:7px;align-items:center;font-size:11.5px;margin-bottom:6px}
+.nt b{color:#14243F}.nt span{margin-left:auto;color:#8A9AAC;font-size:10.5px}
+.note textarea{width:100%;min-width:0;border:1px solid #E1E9F2;border-radius:6px;padding:7px 9px;font-size:12px;font-family:inherit;color:#25364D;resize:vertical;outline:none}
+.acts{display:grid;gap:5px}
+.act{display:flex;gap:9px;align-items:center;background:#F7FAFD;border-radius:7px;padding:7px 11px;font-size:12px;color:#25364D;line-height:1.5;min-width:0}
+.act span{flex:none;width:18px;height:18px;border-radius:50%;background:#1B5A96;color:#fff;font-size:10.5px;font-weight:800;display:flex;align-items:center;justify-content:center}
+.acts.slim .act{background:#F4FAF7;font-size:11.5px;color:#4A6157}
+.t3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.t4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px}
+.t3c,.t4c{background:#F7FAFD;border:1px solid #E1E9F2;border-radius:9px;padding:10px 12px;min-width:0}
+.t3c b,.t4c b{display:block;font-size:13px;color:#14243F;margin:4px 0 3px}
+.t3c span,.t4c span{display:block;font-size:11px;color:#5C6B80;line-height:1.5}
+.t3c em{font-style:normal;font-size:10.5px;color:#1E8A5F;font-weight:800;letter-spacing:.5px}
+.rules{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;align-items:stretch}
+.rt{background:#1E8A5F;color:#fff;border-radius:8px;padding:9px 11px;font-size:12px;font-weight:800;display:flex;align-items:center}
+.rule{background:#F2FAF6;border:1px solid #D6EBE0;border-radius:8px;padding:9px 11px;font-size:11.5px;display:flex;gap:8px;align-items:center;line-height:1.45}
+.rule b{flex:none;width:18px;height:18px;border-radius:50%;background:#1E8A5F;color:#fff;font-size:10.5px;display:flex;align-items:center;justify-content:center}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{border:1.5px solid;border-radius:20px;padding:5px 13px;font-size:12px;font-weight:700;background:#fff}
+.warn{display:flex;gap:8px;align-items:flex-start;background:#FFFAF1;border-left:3px solid #C4871E;border-radius:8px;padding:9px 12px;font-size:11.5px;color:#6E5A32;line-height:1.55}
+.rh3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;align-items:start}
+.rh{background:#F7FAFD;border:1px solid #E1E9F2;border-radius:9px;padding:11px 13px;min-width:0}
+.rhh{display:flex;gap:7px;align-items:center;font-size:13px;color:#14243F;margin-bottom:7px}
+.rhi{font-size:11.5px;color:#5C6B80;padding:5px 0 5px 11px;border-top:1px solid #EAF0F6;position:relative;line-height:1.5;word-break:break-word}
+.rhi:before{content:"";position:absolute;left:0;top:12px;width:4px;height:4px;border-radius:50%;background:#1B5A96}
+.rl3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.rl{display:flex;gap:10px;align-items:flex-start;background:#FFF3F0;border:1px solid #E9C9C2;border-radius:9px;padding:11px 13px;min-width:0}
+.rl b{display:block;font-size:13px;color:#8A3B33}.rl span{display:block;font-size:11px;color:#7A5A55;margin-top:3px;line-height:1.5}
+.foot{padding:14px 28px 18px;font-size:10.5px;color:#8A9AAC;line-height:1.7;background:#F7F9FC;display:flex;gap:16px;justify-content:space-between;flex-wrap:wrap}
+.foot span:last-child{white-space:nowrap;font-weight:700}
+/* responsive */
+@media(max-width:1200px){.hdr{width:100%}.sb{grid-template-columns:minmax(0,1fr)}.gl{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:900px){.hd{padding:18px}.sec{padding:16px 18px}.t4{grid-template-columns:repeat(2,minmax(0,1fr))}.rh3,.rl3{grid-template-columns:minmax(0,1fr)}.rules{grid-template-columns:repeat(2,minmax(0,1fr))}.rh3{align-items:start}}
+@media(max-width:700px){.fields{grid-template-columns:repeat(2,minmax(0,1fr))}.t3,.flow{grid-template-columns:minmax(0,1fr)}.pc:not(:last-child):after{content:"↓";right:50%;top:auto;bottom:-17px;transform:translateX(50%)}.gl{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:480px){.hdl h1{font-size:23px}.t4,.rules{grid-template-columns:minmax(0,1fr)}.tools{gap:5px}button,.btn{padding:6px 8px;font-size:10.5px}.tb th,.tb td{font-size:11px;padding:6px}}
+@media print{body{background:#fff}.tools,.howto{display:none}.wrap{width:100%}.sec{break-inside:avoid}.hd{background:#14243F!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}*{print-color-adjust:exact;-webkit-print-color-adjust:exact}}
+</style></head><body>
+<div class="wrap">
+<header class="hd">
+  <div class="hdl"><div class="eyebrow">P L A Y B O O K   ·   家 清 类 目</div><h1>货架经营 · 照着做</h1><p>一张图看懂怎么涨，一份清单照着打勾 · A → B → C 不跳级</p><p>口径：货架成交 = 非直播、非短视频渠道成交</p></div>
+  <div class="hdr">
+    <div class="fields">
+      <div><label>品牌</label><input type="text" id="brand" data-k="meta_brand" placeholder="填品牌"></div>
+      <div><label>店铺</label><input type="text" id="shop" data-k="meta_shop" placeholder="填店铺"></div>
+      <div><label>填写人</label><input type="text" id="who" data-k="meta_who" placeholder="填姓名"></div>
+      <div><label>日期</label><input type="date" id="date" data-k="meta_date"></div>
+    </div>
+    <div class="tools"><div class="prog">已完成 <b id="done">0</b> / <span id="total">0</span></div>
+      <div class="bar"><i id="bar"></i></div>
+      <button id="dl">下载我的填写</button><label class="btn" for="imp">导入填写</label>
+      <input type="file" id="imp" accept=".json,application/json" hidden>
+      <button id="pr">打印 / PDF</button><button id="clr">清空重填</button></div>
+    <div class="howto"><b>怎么填：</b>① 勾选与备注自动存本机浏览器，刷新 / 关掉都不丢；② 换填写人切到另一份存档，填写不上传；③ 填完点「下载我的填写」发回对接人，或「打印 / PDF」自己存档。</div>
+  </div>
+</header>
+<svg class="map" viewBox="0 0 1400 400" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', sans-serif" role="img" aria-label="货架经营作战地图">
+<rect x="0" y="0" width="1400" height="66" rx="0" fill="#EAF3FC"/>
+<text x="24" y="24" font-size="12" fill="#1B5A96" font-weight="800" text-anchor="start">先把这一页记住 · 货架怎么涨</text>
+<text x="24" y="52" font-size="21" fill="#14243F" font-weight="800" text-anchor="start">货架 GMV ＝ 基建（地基） × （ 直播外溢 ＋ 心智品 ＋ 搜索承接 ）</text>
+<text x="1376" y="52" font-size="12" fill="#5C6B80" font-weight="700" text-anchor="end">乘法关系 · 可叠加</text>
+<g class="mlayer">
+<rect x="24" y="80" width="440" height="190" rx="12" fill="#F2F8FE" stroke="#1B5A96" stroke-width="1.6"/>
+<path d="M24 92 a12 12 0 0 1 12 -12 h416 a12 12 0 0 1 12 12 v34 h-440 z" fill="#1B5A96"/>
+<circle cx="58" cy="103" r="17" fill="#ffffff"/>
+<text x="58" y="110" font-size="18" fill="#1B5A96" font-weight="800" text-anchor="middle">A</text>
+<text x="86" y="109" font-size="16" fill="#ffffff" font-weight="800" text-anchor="start">基建 · 先把店开好</text>
+<text x="448" y="109" font-size="11" fill="#ffffff" font-weight="700" text-anchor="end">第 1 步</text>
+<g transform="translate(45.0,140.0) scale(0.750)" fill="none" stroke="#1B5A96" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></g>
+<text x="76" y="154" font-size="12.5" fill="#25364D" font-weight="600" text-anchor="start">五维商品力：宽度 / 价格 / 爆款 / 稳定 / 佣金</text>
+<path d="M42 167 L446 167" stroke="#D8E4F0" stroke-width="1" stroke-dasharray="4 5"/>
+<g transform="translate(45.0,176.0) scale(0.750)" fill="none" stroke="#1B5A96" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></g>
+<text x="76" y="190" font-size="12.5" fill="#25364D" font-weight="600" text-anchor="start">收藏召回：客服 · 包裹卡 · 直播口播</text>
+<path d="M42 203 L446 203" stroke="#D8E4F0" stroke-width="1" stroke-dasharray="4 5"/>
+<g transform="translate(45.0,212.0) scale(0.750)" fill="none" stroke="#1B5A96" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></g>
+<text x="76" y="226" font-size="12.5" fill="#25364D" font-weight="600" text-anchor="start">过关线：在售 SPU 覆盖率 ≥90%</text>
+</g>
+<path d="M470 175 L486 175" stroke="#14243F" stroke-width="2"/>
+<path d="M482 170 L490 175 L482 180 z" fill="#14243F"/>
+<g class="mlayer">
+<rect x="480" y="80" width="440" height="190" rx="12" fill="#FFFAF1" stroke="#C4871E" stroke-width="1.6"/>
+<path d="M480 92 a12 12 0 0 1 12 -12 h416 a12 12 0 0 1 12 12 v34 h-440 z" fill="#C4871E"/>
+<circle cx="514" cy="103" r="17" fill="#ffffff"/>
+<text x="514" y="110" font-size="18" fill="#C4871E" font-weight="800" text-anchor="middle">B</text>
+<text x="542" y="109" font-size="16" fill="#ffffff" font-weight="800" text-anchor="start">必做 · 抓两个主力</text>
+<text x="904" y="109" font-size="11" fill="#ffffff" font-weight="700" text-anchor="end">第 2 步</text>
+<g transform="translate(501.0,140.0) scale(0.750)" fill="none" stroke="#C4871E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18l5-5 4 3 6-8"/><path d="M15 8h3v3"/></g>
+<text x="532" y="154" font-size="12.5" fill="#25364D" font-weight="600" text-anchor="start">直播外溢：起量后连续 1–4 周看跟涨</text>
+<path d="M498 167 L902 167" stroke="#D8E4F0" stroke-width="1" stroke-dasharray="4 5"/>
+<g transform="translate(501.0,176.0) scale(0.750)" fill="none" stroke="#C4871E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18l5-5 4 3 6-8"/><path d="M15 8h3v3"/></g>
+<text x="532" y="190" font-size="12.5" fill="#25364D" font-weight="600" text-anchor="start">心智品：应报尽报，报入后配投广</text>
+<path d="M498 203 L902 203" stroke="#D8E4F0" stroke-width="1" stroke-dasharray="4 5"/>
+<g transform="translate(501.0,212.0) scale(0.750)" fill="none" stroke="#C4871E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18l5-5 4 3 6-8"/><path d="M15 8h3v3"/></g>
+<text x="532" y="226" font-size="12.5" fill="#25364D" font-weight="600" text-anchor="start">过关线：货架 GMV 环比 ≥+30%</text>
+</g>
+<path d="M926 175 L942 175" stroke="#14243F" stroke-width="2"/>
+<path d="M938 170 L946 175 L938 180 z" fill="#14243F"/>
+<g class="mlayer">
+<rect x="936" y="80" width="440" height="190" rx="12" fill="#F2FAF6" stroke="#1E8A5F" stroke-width="1.6"/>
+<path d="M936 92 a12 12 0 0 1 12 -12 h416 a12 12 0 0 1 12 12 v34 h-440 z" fill="#1E8A5F"/>
+<circle cx="970" cy="103" r="17" fill="#ffffff"/>
+<text x="970" y="110" font-size="18" fill="#1E8A5F" font-weight="800" text-anchor="middle">C</text>
+<text x="998" y="109" font-size="16" fill="#ffffff" font-weight="800" text-anchor="start">优化 · 把流量吃干净</text>
+<text x="1360" y="109" font-size="11" fill="#ffffff" font-weight="700" text-anchor="end">第 3 步</text>
+<g transform="translate(957.0,140.0) scale(0.750)" fill="none" stroke="#1E8A5F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5L21 21"/></g>
+<text x="988" y="154" font-size="12.5" fill="#25364D" font-weight="600" text-anchor="start">搜索承接：建词表 → 查卡位 → 改主图</text>
+<path d="M954 167 L1358 167" stroke="#D8E4F0" stroke-width="1" stroke-dasharray="4 5"/>
+<g transform="translate(957.0,176.0) scale(0.750)" fill="none" stroke="#1E8A5F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5L21 21"/></g>
+<text x="988" y="190" font-size="12.5" fill="#25364D" font-weight="600" text-anchor="start">feeds 卡位：好友看过 / 买过 · 私域扩散</text>
+<path d="M954 203 L1358 203" stroke="#D8E4F0" stroke-width="1" stroke-dasharray="4 5"/>
+<g transform="translate(957.0,212.0) scale(0.750)" fill="none" stroke="#1E8A5F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5L21 21"/></g>
+<text x="988" y="226" font-size="12.5" fill="#25364D" font-weight="600" text-anchor="start">过关线：词表 + 主图三硬规矩</text>
+</g>
+<text x="24" y="296" font-size="12" fill="#14243F" font-weight="800" text-anchor="start">执行节奏</text>
+<rect x="24" y="306" width="440" height="34" rx="8" fill="#F4F7FB" stroke="#D8E4F0" stroke-width="1"/>
+<g transform="translate(38.0,315.0) scale(0.667)" fill="none" stroke="#1B5A96" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 6.5v6l3.5 2"/></g>
+<text x="64" y="328" font-size="12.5" fill="#14243F" font-weight="800" text-anchor="start">每周 30 分钟</text>
+<text x="448" y="328" font-size="11" fill="#5C6B80" font-weight="400" text-anchor="end">记货架 GMV 周环比 · 查换链接 / 下架</text>
+<rect x="480" y="306" width="440" height="34" rx="8" fill="#F4F7FB" stroke="#D8E4F0" stroke-width="1"/>
+<g transform="translate(494.0,315.0) scale(0.667)" fill="none" stroke="#1B5A96" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 6.5v6l3.5 2"/></g>
+<text x="520" y="328" font-size="12.5" fill="#14243F" font-weight="800" text-anchor="start">每月初</text>
+<text x="904" y="328" font-size="11" fill="#5C6B80" font-weight="400" text-anchor="end">记 5 维商品力 · 更词表 · 报心智品</text>
+<rect x="936" y="306" width="440" height="34" rx="8" fill="#F4F7FB" stroke="#D8E4F0" stroke-width="1"/>
+<g transform="translate(950.0,315.0) scale(0.667)" fill="none" stroke="#1B5A96" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 6.5v6l3.5 2"/></g>
+<text x="976" y="328" font-size="12.5" fill="#14243F" font-weight="800" text-anchor="start">季度追踪</text>
+<text x="1360" y="328" font-size="11" fill="#5C6B80" font-weight="400" text-anchor="end">按 A / B / C 回溯，逐层往上推</text>
+<rect x="24" y="350" width="440" height="40" rx="8" fill="#FFF6F4" stroke="#E9C9C2" stroke-width="1"/>
+<circle cx="48" cy="370" r="12" fill="#8A3B33"/>
+<g transform="translate(41.5,363.5) scale(0.542)" fill="none" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"/></g>
+<text x="68" y="375" font-size="12.5" fill="#8A3B33" font-weight="800" text-anchor="start">频繁换链接</text>
+<text x="448" y="375" font-size="10.5" fill="#7A5A55" font-weight="400" text-anchor="end">换一次丢一次曝光与销量累积</text>
+<rect x="480" y="350" width="440" height="40" rx="8" fill="#FFF6F4" stroke="#E9C9C2" stroke-width="1"/>
+<circle cx="504" cy="370" r="12" fill="#8A3B33"/>
+<g transform="translate(497.5,363.5) scale(0.542)" fill="none" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"/></g>
+<text x="524" y="375" font-size="12.5" fill="#8A3B33" font-weight="800" text-anchor="start">只播不店</text>
+<text x="904" y="375" font-size="10.5" fill="#7A5A55" font-weight="400" text-anchor="end">外溢流量全部漏掉</text>
+<rect x="936" y="350" width="440" height="40" rx="8" fill="#FFF6F4" stroke="#E9C9C2" stroke-width="1"/>
+<circle cx="960" cy="370" r="12" fill="#8A3B33"/>
+<g transform="translate(953.5,363.5) scale(0.542)" fill="none" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"/></g>
+<text x="980" y="375" font-size="12.5" fill="#8A3B33" font-weight="800" text-anchor="start">心智品报了不投广</text>
+<text x="1360" y="375" font-size="10.5" fill="#7A5A55" font-weight="400" text-anchor="end">体量跃迁要靠投广</text>
+</svg>
+<section class="sec " id="s0"><div class="sh"><span class="no">0</span><div><h2>先定位</h2><p>用直播规模倒推货架规模，先判断自己卡在哪一层</p></div></div><div class="sb"><div class="flow"><div class="pc"><div class="pci"><svg class="ic" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1B5A96" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g transform="scale(1.000)"><path d="M3 18l5-5 4 3 6-8"/><path d="M15 8h3v3"/></g></svg></div><b>直播起量</b><span>流量与成交基本盘</span></div><div class="pc"><div class="pci"><svg class="ic" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1B5A96" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g transform="scale(1.000)"><circle cx="12" cy="12" r="9"/><path d="M12 6.5v6l3.5 2"/></g></svg></div><b>连续 1–4 周</b><span>盯货架 GMV 是否跟涨</span></div><div class="pc"><div class="pci"><svg class="ic" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1B5A96" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g transform="scale(1.000)"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5L21 21"/></g></svg></div><b>没跟涨 → A1 + C1</b><span>先查基建与搜索承接，别先怀疑流量</span></div></div><div class="law"><svg class="ic" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1E8A5F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g transform="scale(0.833)"><path d="M20 8a8 8 0 00-14-3L4 7"/><path d="M4 3v4h4"/><path d="M4 16a8 8 0 0014 3l2-2"/><path d="M20 21v-4h-4"/></g></svg><b>可复用规律</b><span>即使直播冲高回落，货架仍稳定维持在起量周的较高水准</span></div><div class="gate"><div class="gt"><svg class="ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1B5A96" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g transform="scale(0.667)"><path d="M5 21V4M5 5h12l-2.5 4L17 13H5"/></g></svg><b>定位达标线</b><span>2 条 · 逐条打勾</span></div><div class="gl"><label class="chk"><input type="checkbox" data-k="c_001"><span class="cb"></span><span class="ct">已建立「直播周 → 货架周」跟涨记录表</span></label><label class="chk"><input type="checkbox" data-k="c_002"><span class="cb"></span><span class="ct">已按直播规模倒推并设定货架目标值</span></label></div></div></div></section><section class="sec la" id="s1"><div class="sh"><span class="no">1</span><div><h2>A · 基建动作</h2><p>只播不店、频繁换链接，这一层不做好后面全白做</p></div></div><div class="sb"><div class="sub"><h3>A1 · 品上全、上好、持续在售</h3><p>商品力是货架的地基，拆成 5 个维度</p></div><div class="tw"><table class="tb"><thead><tr><th>维度</th><th>手册要做什么</th><th>家清怎么落</th></tr></thead><tbody><tr><td>宽度</td><td>在售 SPU 数、二级品类数拉齐其他电商平台</td><td>容量 / 件数 / 适用范围全规格在售</td></tr><tr><td>价格力</td><td>盘点有多少比例 SPU 有价格优势</td><td>主力装逐款比价，优势为 0% 就报活动</td></tr><tr><td>爆款力</td><td>盯 TOP5 SPU 的 GMV 占比，打造爆款链接</td><td>囤货装、多件装做店内爆款链接</td></tr><tr><td>稳定性</td><td>不频繁换链接，保持稳定在售</td><td>家清同：换一次丢一次曝光与销量累积</td></tr><tr><td>佣金机制</td><td>全店 100% 设置优选联盟佣金，盯达人动销</td><td>达人带货 GMV、动销商品数一起看</td></tr></tbody></table></div><div class="gate"><div class="gt"><svg class="ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1B5A96" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g transform="scale(0.667)"><path d="M5 21V4M5 5h12l-2.5 4L17 13H5"/></g></svg><b>A1 达标线</b><span>6 条 · 逐条打勾</span></div><div class="gl"><label class="chk"><input type="checkbox" data-k="c_003"><span class="cb"></span><span class="ct">5 维数值每月初记一次，连续 3 个月不下降</span></label><label class="chk"><input type="checkbox" data-k="c_004"><span class="cb"></span><span class="ct">在售 SPU 数、二级品类数对齐其他平台（覆盖率 ≥90%）</span></label><label class="chk"><input type="checkbox" data-k="c_005"><span class="cb"></span><span class="ct">已盘点价格优势 SPU 比例，不是 0%</span></label><label class="chk"><input type="checkbox" data-k="c_006"><span class="cb"></span><span class="ct">近 30 天没有频繁换链接、没有大批下架</span></label><label class="chk"><input type="checkbox" data-k="c_007"><span class="cb"></span><span class="ct">全店 100% 设置优选联盟佣金，且有达人动销</span></label><label class="chk"><input type="checkbox" data-k="c_008"><span class="cb"></span><span class="ct">每个二级品类都有至少 1 个能承接搜索的主推款</span></label></div></div><div class="sub"><h3>A2 · 引导用户收藏店铺</h3><p>收藏店铺是货架上最强的用户召回场景，成本最低、复用次数最多</p></div><div class="t3"><div class="t3c"><svg class="ic" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1B5A96" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g transform="scale(0.917)"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 10h8M8 13h5"/></g></svg><b>客服</b><span>下单后、售后结束时各一句收藏引导</span></div><div class="t3c"><svg class="ic" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1B5A96" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g transform="scale(0.917)"><rect x="2.5" y="5" width="19" height="14" rx="2"/><path d="M2.5 10h19M6 15h4"/></g></svg><b>包裹卡</b><span>印「收藏店铺」入口</span></div><div class="t3c"><svg class="ic" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1B5A96" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g transform="scale(0.917)"><path d="M3.5 10h4l7.5-4.2v12.4L7.5 14h-4z"/><path d="M18 9.2a4.2 4.2 0 010 5.6"/><path d="M7 14v4.5h3.2V14.8"/></g></svg><b>直播间</b><span>口播引导收藏</span></div></div><div class="gate"><div class="gt"><svg class="ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1B5A96" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g transform="scale(0.667)"><path d="M5 21V4M5 5h12l-2.5 4L17 13H5"/></g></svg><b>A2 达标线</b><span>3 条 · 逐条打勾</span></div><div class="gl"><label class="chk"><input type="checkbox" data-k="c_009"><span class="cb"></span><span class="ct">客服话术已加收藏引导</span></label><label class="chk"><input type="checkbox" data-k="c_010"><span class="cb"></span><span class="ct">包裹卡已印收藏入口</span></label><label class="chk"><input type="checkbox" data-k="c_011"><span class="cb"></span><span class="ct">直播间有收藏口播</span></label></div></div><div class="note"><div class="nt"><svg class="ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1B5A96" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g transform="scale(0.667)"><rect x="2.5" y="5" width="19" height="14" rx="2"/><path d="M2.5 10h19M6 15h4"/></g></svg><b>A 层 · 我的现状与下一步</b><span>填给自己看，会一起导出</span></div><textarea data-k="na_012" rows="2" placeholder="写一句现状 + 下一步动作…"></textarea></div></div></section><section class="sec lb" id="s2"><div class="sh"><span class="no">2</span><div><h2>B · 必做动作</h2><p>两个主力驱动：直播外溢、心智品</p></div></div><div class="sb"><div class="sub"><h3>B1 · 直播后的成交与评价沉淀</h3><p>直播给的是流量和成交基本盘，货架 / 搜索承接与直播规模正相关</p></div><div class="acts"><div class="act"><span>1</span>直播起量后连续 1–4 周盯货架 GMV（预期 ≥30%）</div><div class="act"><span>2</span>没跟涨 → 回 A1 查主图 / 标题 / 评价是否齐全</div><div class="act"><span>3</span>弱货架型商家：按直播规模倒推货架规模，设目标补缺口</div><div class="act"><span>4</span>做直播后评价沉淀，使用平台「评价有奖」工具</div></div><div class="gate"><div class="gt"><svg class="ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1B5A96" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g transform="scale(0.667)"><path d="M5 21V4M5 5h12l-2.5 4L17 13H5"/></g></svg><b>B1 达标线</b><span>6 条 · 逐条打勾</span></div><div class="gl"><label class="chk"><input type="checkbox" data-k="c_013"><span class="cb"></span><span class="ct">起量周之后 1–4 周，货架 GMV 环比 ≥+30%</span></label><label class="chk"><input type="checkbox" data-k="c_014"><span class="cb"></span><span class="ct">已建立「直播周 → 货架周」跟涨记录表</span></label><label class="chk"><input type="checkbox" data-k="c_015"><span class="cb"></span><span class="ct">直播主推款在货架上同款、同价、有评价</span></label><label class="chk"><input type="checkbox" data-k="c_016"><span class="cb"></span><span class="ct">已按直播规模倒推并设定货架目标值</span></label><label class="chk"><input type="checkbox" data-k="c_017"><span class="cb"></span><span class="ct">已按平台规则做好售后与退货说明</span></label><label class="chk"><input type="checkbox" data-k="c_018"><span class="cb"></span><span class="ct">已使用「评价有奖」工具做评价沉淀</span></label></div></div><div class="sub"><h3>B2 · 心智品：应报尽报，报进去再投广放大</h3><p>报入后既有价格转化，也带来搜索与推荐的额外曝光，配投广才能把体量放大</p></div><div class="sub2">心智品额外 4 个曝光位</div><div class="t4"><div class="t4c"><b>主搜</b><span>品牌词、品类词搜索结果优先展示</span></div><div class="t4c"><b>小店与卡包</b><span>「官方补贴 / 礼物」→「小店好货」tab</span></div><div class="t4c"><b>商详入口</b><span>主图下入口；评价下 1 入口 + 3 推荐位</span></div><div class="t4c"><b>原生活动页</b><span>「小店好货」活动页</span></div></div><div class="gate"><div class="gt"><svg class="ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1B5A96" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g transform="scale(0.667)"><path d="M5 21V4M5 5h12l-2.5 4L17 13H5"/></g></svg><b>B2 达标线</b><span>4 条 · 逐条打勾</span></div><div class="gl"><label class="chk"><input type="checkbox" data-k="c_019"><span class="cb"></span><span class="ct">本批次平台活动 / 补贴已应报尽报</span></label><label class="chk"><input type="checkbox" data-k="c_020"><span class="cb"></span><span class="ct">报入后已配广告预算放大</span></label><label class="chk"><input type="checkbox" data-k="c_021"><span class="cb"></span><span class="ct">已跟踪报入前后搜索曝光人数 / 搜索支付金额</span></label><label class="chk"><input type="checkbox" data-k="c_022"><span class="cb"></span><span class="ct">已盘点可报货盘清单（按品类 × 活动节奏）</span></label></div></div><div class="warn"><svg class="ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C4871E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g transform="scale(0.667)"><path d="M6 6l12 12M18 6L6 18"/></g></svg><span>手册的 N-1 代选品规律是 3C 行业结论，家清不适用；家清按品类 × 平台活动节奏应报尽报，样本待校准</span></div><div class="note"><div class="nt"><svg class="ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1B5A96" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g transform="scale(0.667)"><rect x="2.5" y="5" width="19" height="14" rx="2"/><path d="M2.5 10h19M6 15h4"/></g></svg><b>B 层 · 我的现状与下一步</b><span>填给自己看，会一起导出</span></div><textarea data-k="nb_023" rows="2" placeholder="写一句现状 + 下一步动作…"></textarea></div></div></section><section class="sec lc" id="s3"><div class="sh"><span class="no">3</span><div><h2>C · 优化动作</h2><p>第三个驱动：搜索。用户在找，你有没有出现在他眼前</p></div></div><div class="sb"><div class="sub"><h3>C1 · 搜索承接：主抓「小店与卡包搜」，其次「主搜」</h3><p>先把自己的词表建起来，再逐个检查卡位</p></div><div class="t3 step3"><div class="t3c"><em>Step 1</em><b>建词表</b><span>按二级类目建月度候选词表：先品类词，再「品牌＋品类 / 规格」</span></div><div class="t3c"><em>Step 2</em><b>查卡位</b><span>逐词查主力款：是否曝光 / 排序 / 标题 / 价格 / 评价</span></div><div class="t3c"><em>Step 3</em><b>改主图</b><span>把点击率拉起来，按三条硬规矩改</span></div></div><div class="rules"><div class="rt">主图三条硬规矩</div><div class="rule"><b>1</b>单主体、够大、别拼贴多图</div><div class="rule"><b>2</b>正品 / 售后 / 赠品可视化</div><div class="rule"><b>3</b>价格要有品类内竞争力</div></div><div class="acts slim"><div class="act">规格、用途、适用范围讲清楚（加分项）</div><div class="act">属性 / 场景词增加 → 用匹配规格承接，标题主图可视化</div><div class="act">品牌 / 型号词增加 → 查主力款搜索展示；新品类词增加 → 扩品参考</div></div><div class="gate"><div class="gt"><svg class="ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1B5A96" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g transform="scale(0.667)"><path d="M5 21V4M5 5h12l-2.5 4L17 13H5"/></g></svg><b>C1 达标线</b><span>5 条 · 逐条打勾</span></div><div class="gl"><label class="chk"><input type="checkbox" data-k="c_024"><span class="cb"></span><span class="ct">已按二级类目建立月度候选词表</span></label><label class="chk"><input type="checkbox" data-k="c_025"><span class="cb"></span><span class="ct">主要搜索词逐个查过：曝光 / 排序 / 标题 / 价格 / 评价</span></label><label class="chk"><input type="checkbox" data-k="c_026"><span class="cb"></span><span class="ct">主力款主图已按「三硬规矩」改过</span></label><label class="chk"><input type="checkbox" data-k="c_027"><span class="cb"></span><span class="ct">已补属性词 / 场景词（小规格、手持、静音、宿舍用…）</span></label><label class="chk"><input type="checkbox" data-k="c_028"><span class="cb"></span><span class="ct">高点击的「视频号内搜」已补短视频 / 内容承接</span></label></div></div><div class="sub"><h3>C2 · 商品 feeds 自然推荐卡位</h3><p>好友看过 / 买过能把购买圈层扩散出去；大促、送礼节点前提前冲量，积累销量与评价</p></div><div class="gate"><div class="gt"><svg class="ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1B5A96" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g transform="scale(0.667)"><path d="M5 21V4M5 5h12l-2.5 4L17 13H5"/></g></svg><b>C2 达标线</b><span>2 条 · 逐条打勾</span></div><div class="gl"><label class="chk"><input type="checkbox" data-k="c_029"><span class="cb"></span><span class="ct">已规划节点前的冲量节奏</span></label><label class="chk"><input type="checkbox" data-k="c_030"><span class="cb"></span><span class="ct">私域已有社交扩散动作</span></label></div></div><div class="sub2">五大搜索入口（都要覆盖，权重不同）</div><div class="chips"><span class="chip" style="border-color:#1E8A5F;color:#1E8A5F">主搜</span><span class="chip" style="border-color:#1E8A5F;color:#1E8A5F">小店与卡包搜</span><span class="chip" style="border-color:#1E8A5F;color:#1E8A5F">视频号内搜</span><span class="chip" style="border-color:#1E8A5F;color:#1E8A5F">礼物搜</span><span class="chip" style="border-color:#1E8A5F;color:#1E8A5F">直播内搜</span></div><div class="note"><div class="nt"><svg class="ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1B5A96" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g transform="scale(0.667)"><rect x="2.5" y="5" width="19" height="14" rx="2"/><path d="M2.5 10h19M6 15h4"/></g></svg><b>C 层 · 我的现状与下一步</b><span>填给自己看，会一起导出</span></div><textarea data-k="nc_031" rows="2" placeholder="写一句现状 + 下一步动作…"></textarea></div></div></section><section class="sec " id="s4"><div class="sh"><span class="no">4</span><div><h2>对号入座</h2><p>家清细分类目，先查哪个入口、改什么</p></div></div><div class="sb"><div class="tw"><table class="tb"><thead><tr><th>家清细分</th><th>词结构（决定查什么）</th><th>主战场入口</th><th>具体动作</th></tr></thead><tbody><tr><td>油污清洁剂</td><td>品类词 + 场景词（厨房重油污）</td><td>小店与卡包搜</td><td>主图写清适用范围与容量，标题带场景词</td></tr><tr><td>管道疏通剂 / 消毒液</td><td>品类词为主</td><td>卡包搜 + 主搜</td><td>先补通用品类词，规格与用途可视化</td></tr><tr><td>清洁纸品 / 衣物清洁</td><td>品类词 + 囤货规格词</td><td>卡包搜</td><td>多件装做主推款，价格要有品类内竞争力</td></tr><tr><td>驱蚊驱虫 / 季节品</td><td>场景词随季节增加</td><td>主搜 + 节点活动页</td><td>按季节提前建词表，节点前冲量积评价</td></tr><tr><td>清洁用具</td><td>属性词为主（手持、可替换）</td><td>小店与卡包搜</td><td>保留属性词，主图单主体、够大</td></tr></tbody></table></div><div class="warn"><svg class="ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C4871E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g transform="scale(0.667)"><path d="M6 6l12 12M18 6L6 18"/></g></svg><span>本表按手册「不同品类重点不一样」的方法映射到家清细分类目，入口与动作非实测数据，待用本店搜索词表校准</span></div></div></section><section class="sec " id="s5"><div class="sh"><span class="no">5</span><div><h2>执行节奏</h2><p>什么时候做什么</p></div></div><div class="sb"><div class="rh3"><div class="rh"><div class="rhh"><svg class="ic" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1B5A96" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g transform="scale(0.750)"><circle cx="12" cy="12" r="9"/><path d="M12 6.5v6l3.5 2"/></g></svg><b>每周 · 30 分钟</b></div><div class="rhi">记货架 GMV 周环比</div><div class="rhi">直播起量后跟 1–4 周看是否 ≥+30%</div><div class="rhi">查有无链接被换、在售品被下架</div></div><div class="rh"><div class="rhh"><svg class="ic" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1B5A96" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g transform="scale(0.750)"><circle cx="12" cy="12" r="9"/><path d="M12 6.5v6l3.5 2"/></g></svg><b>每月初</b></div><div class="rhi">5 维商品力记一次（SPU 数 / 价格优势比 / TOP5 占比 / 佣金动销）</div><div class="rhi">更新二级类目候选词表</div><div class="rhi">按活动节奏提报心智品，报后配投广</div><div class="rhi">复核直播规模与货架规模匹配度，补缺口</div><div class="rhi">抽 3–5 个主要搜索词查卡位 + 改主图</div></div><div class="rh"><div class="rhh"><svg class="ic" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1B5A96" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g transform="scale(0.750)"><circle cx="12" cy="12" r="9"/><path d="M12 6.5v6l3.5 2"/></g></svg><b>季度追踪</b></div><div class="rhi">按 A / B / C 三层回溯，看落在哪一层</div><div class="rhi">逐层往上推，不跳级</div></div></div></div></section><section class="sec red" id="s6"><div class="sh"><span class="no">6</span><div><h2>三条红线</h2><p>做了等于白做</p></div></div><div class="sb"><div class="rl3"><div class="rl"><svg class="ic" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8A3B33" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g transform="scale(0.833)"><path d="M6 6l12 12M18 6L6 18"/></g></svg><div><b>频繁换链接</b><span>换一次丢一次曝光与销量累积</span></div></div><div class="rl"><svg class="ic" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8A3B33" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g transform="scale(0.833)"><path d="M6 6l12 12M18 6L6 18"/></g></svg><div><b>只播不店</b><span>外溢流量全部漏掉</span></div></div><div class="rl"><svg class="ic" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8A3B33" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g transform="scale(0.833)"><path d="M6 6l12 12M18 6L6 18"/></g></svg><div><b>心智品报了不投广</b><span>体量跃迁要靠投广</span></div></div></div></div></section>
+<div class="foot"><span>依据：《微信小店 · 货架场行动手册（3C）》v1 · 2026-09-23（0–7 章全文）；家清映射参考 H1 分场景复现表、德佑价格带 20 SKU、友望 2026-10 L3 销售额环比。手册阈值（≥90% / ≥+30% / 100% 佣金）为 3C 行业原文值，家清样本待校准；家清卡包 cvr 系数与退款率仍待取数。</span><span>A → B → C 不跳级 · 填写只存本机</span></div>
+</div>
+<script>
+(function(){
+  var BASE='hj_playbook_v3_', $=function(s){return document.querySelector(s)},
+      $$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+  var who=$('#who'), els=$$('[data-k]'), boxes=$$('input[type=checkbox]');
+  function key(){return BASE+(who.value.trim()||'默认');}
+  function collect(){var d={};els.forEach(function(el){d[el.dataset.k]=el.type==='checkbox'?el.checked:el.value;});return d;}
+  function upd(){var n=boxes.filter(function(x){return x.checked;}).length;
+    $('#done').textContent=n;$('#total').textContent=boxes.length;
+    $('#bar').style.width=(boxes.length?100*n/boxes.length:0)+'%';}
+  function save(){try{localStorage.setItem(key(),JSON.stringify(collect()));}catch(err){}}
+  function apply(d){els.forEach(function(el){if(!(el.dataset.k in d))return;var v=d[el.dataset.k];
+    if(el.type==='checkbox')el.checked=!!v;else el.value=v;});upd();}
+  els.forEach(function(el){el.addEventListener('change',function(){upd();save();});
+    if(el.tagName==='TEXTAREA'||el.type==='text'||el.type==='date')el.addEventListener('input',save);});
+  who.addEventListener('change',function(){try{apply(JSON.parse(localStorage.getItem(key())||'{}'));}catch(err){}});
+  $('#dl').addEventListener('click',function(){
+    var d=collect();d._meta={brand:$('#brand').value,shop:$('#shop').value,who:who.value,date:$('#date').value,
+      done:boxes.filter(function(x){return x.checked;}).length,total:boxes.length,exported:new Date().toISOString()};
+    var b=new Blob([JSON.stringify(d,null,2)],{type:'application/json'}),u=URL.createObjectURL(b),a=document.createElement('a');
+    a.href=u;a.download='家清货架经营Playbook_'+(who.value.trim()||'填写')+'.json';a.click();URL.revokeObjectURL(u);});
+  $('#imp').addEventListener('change',function(ev){var f=ev.target.files[0];if(!f)return;
+    var r=new FileReader();r.onload=function(){try{apply(JSON.parse(r.result));save();}catch(err){alert('文件读不出：'+err.message);}};r.readAsText(f);ev.target.value='';});
+  $('#pr').addEventListener('click',function(){window.print();});
+  $('#clr').addEventListener('click',function(){if(!confirm('清空本机这份填写？不影响其他人。'))return;
+    try{localStorage.removeItem(key());}catch(err){}
+    els.forEach(function(el){if(el.type==='checkbox')el.checked=false;else if(el.dataset.k.indexOf('meta')<0)el.value='';});upd();});
+  try{apply(JSON.parse(localStorage.getItem(key())||'{}'));}catch(err){upd();}
+})();
+</script></body></html>
